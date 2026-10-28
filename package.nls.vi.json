@@ -1,0 +1,20 @@
+{
+  "description": "Xem việc đang chờ bạn trong 4PM, nhận thông báo và điều khiển worker của dự án ngay trong editor.",
+  "config.serverUrl": "Origin của client gateway 4PM, vd. `https://gw.4pm.app` (tự host: `gw.<domain>` của bạn).",
+  "config.webUrl": "Origin của web 4PM, dùng để đăng nhập và mở link trên web, vd. `https://app.4pm.app`.",
+  "view.myWork": "Việc của tôi",
+  "view.notifications": "Thông báo",
+  "welcome.signIn": "Đăng nhập để xem việc và thông báo 4PM của bạn.\n[Đăng nhập 4PM](command:4pm.signIn)",
+  "cmd.signIn": "Đăng nhập",
+  "cmd.signOut": "Đăng xuất",
+  "cmd.linkProject": "Liên kết workspace với dự án",
+  "cmd.unlinkProject": "Bỏ liên kết workspace",
+  "cmd.runCommand": "Chạy lệnh trên worker",
+  "cmd.runPrompt": "Chạy prompt AI trên worker",
+  "cmd.stopRun": "Dừng lần chạy",
+  "cmd.refresh": "Làm mới",
+  "cmd.markAllRead": "Đánh dấu tất cả đã đọc",
+  "cmd.openItem": "Mở mục",
+  "cmd.openInWeb": "Mở trên 4PM",
+  "cmd.markRead": "Đánh dấu đã đọc"
+}

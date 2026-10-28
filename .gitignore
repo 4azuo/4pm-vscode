@@ -1,0 +1,6 @@
+# Build output
+dist/
+out/
+*.vsix
+node_modules/
+.turbo/

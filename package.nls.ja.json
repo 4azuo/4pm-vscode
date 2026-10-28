@@ -1,0 +1,20 @@
+{
+  "description": "4PM であなたを待っている作業の確認、通知の受信、プロジェクトの worker の操作をエディターから行えます。",
+  "config.serverUrl": "4PM クライアントゲートウェイのオリジン（例: `https://gw.4pm.app`、セルフホストの場合は自分の `gw.<domain>`）。",
+  "config.webUrl": "サインインと Web で開くリンクに使う 4PM Web アプリのオリジン（例: `https://app.4pm.app`）。",
+  "view.myWork": "マイワーク",
+  "view.notifications": "通知",
+  "welcome.signIn": "サインインして 4PM の作業と通知を表示します。\n[4PM にサインイン](command:4pm.signIn)",
+  "cmd.signIn": "サインイン",
+  "cmd.signOut": "サインアウト",
+  "cmd.linkProject": "ワークスペースをプロジェクトにリンク",
+  "cmd.unlinkProject": "ワークスペースのリンクを解除",
+  "cmd.runCommand": "worker でコマンドを実行",
+  "cmd.runPrompt": "worker で AI プロンプトを実行",
+  "cmd.stopRun": "実行を停止",
+  "cmd.refresh": "更新",
+  "cmd.markAllRead": "すべての通知を既読にする",
+  "cmd.openItem": "項目を開く",
+  "cmd.openInWeb": "4PM で開く",
+  "cmd.markRead": "既読にする"
+}

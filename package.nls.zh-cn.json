@@ -1,0 +1,20 @@
+{
+  "description": "在编辑器中查看 4PM 中等待您处理的工作、接收通知并操控项目的 worker。",
+  "config.serverUrl": "4PM 客户端网关的源，例如 `https://gw.4pm.app`（自托管：您自己的 `gw.<domain>`）。",
+  "config.webUrl": "用于登录和网页链接的 4PM Web 应用源，例如 `https://app.4pm.app`。",
+  "view.myWork": "我的工作",
+  "view.notifications": "通知",
+  "welcome.signIn": "登录以查看您的 4PM 工作和通知。\n[登录 4PM](command:4pm.signIn)",
+  "cmd.signIn": "登录",
+  "cmd.signOut": "退出登录",
+  "cmd.linkProject": "将工作区关联到项目",
+  "cmd.unlinkProject": "取消关联工作区",
+  "cmd.runCommand": "在 worker 上运行命令",
+  "cmd.runPrompt": "在 worker 上运行 AI 提示词",
+  "cmd.stopRun": "停止运行",
+  "cmd.refresh": "刷新",
+  "cmd.markAllRead": "全部标为已读",
+  "cmd.openItem": "打开项目",
+  "cmd.openInWeb": "在 4PM 中打开",
+  "cmd.markRead": "标记为已读"
+}

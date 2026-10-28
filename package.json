@@ -1,0 +1,95 @@
+{
+  "name": "@4pm/vscode",
+  "displayName": "4PM",
+  "description": "%description%",
+  "version": "0.1.0",
+  "private": true,
+  "license": "LicenseRef-4PM-Source-Available",
+  "publisher": "4azuo",
+  "repository": { "type": "git", "url": "https://github.com/4azuo/4pm-vscode.git" },
+  "engines": { "vscode": "^1.90.0" },
+  "categories": ["Other"],
+  "icon": "media/icon.png",
+  "main": "./dist/extension.js",
+  "l10n": "./l10n",
+  "activationEvents": ["onStartupFinished", "onUri"],
+  "contributes": {
+    "authentication": [{ "id": "4pm", "label": "4PM" }],
+    "configuration": {
+      "title": "4PM",
+      "properties": {
+        "4pm.serverUrl": {
+          "type": "string",
+          "default": "https://gw.4pm.app",
+          "markdownDescription": "%config.serverUrl%"
+        },
+        "4pm.webUrl": {
+          "type": "string",
+          "default": "https://app.4pm.app",
+          "markdownDescription": "%config.webUrl%"
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [{ "id": "fourpm", "title": "4PM", "icon": "media/4pm.svg" }]
+    },
+    "views": {
+      "fourpm": [
+        { "id": "4pm.myWork", "name": "%view.myWork%" },
+        { "id": "4pm.notifications", "name": "%view.notifications%" }
+      ]
+    },
+    "viewsWelcome": [
+      { "view": "4pm.myWork", "contents": "%welcome.signIn%", "when": "!4pm.signedIn" },
+      { "view": "4pm.notifications", "contents": "%welcome.signIn%", "when": "!4pm.signedIn" }
+    ],
+    "commands": [
+      { "command": "4pm.signIn", "title": "%cmd.signIn%", "category": "4PM" },
+      { "command": "4pm.signOut", "title": "%cmd.signOut%", "category": "4PM", "enablement": "4pm.signedIn" },
+      { "command": "4pm.linkProject", "title": "%cmd.linkProject%", "category": "4PM", "enablement": "4pm.signedIn" },
+      { "command": "4pm.unlinkProject", "title": "%cmd.unlinkProject%", "category": "4PM", "enablement": "4pm.projectLinked" },
+      { "command": "4pm.runCommand", "title": "%cmd.runCommand%", "category": "4PM", "enablement": "4pm.projectLinked" },
+      { "command": "4pm.runPrompt", "title": "%cmd.runPrompt%", "category": "4PM", "enablement": "4pm.projectLinked" },
+      { "command": "4pm.stopRun", "title": "%cmd.stopRun%", "category": "4PM", "enablement": "4pm.running", "icon": "$(debug-stop)" },
+      { "command": "4pm.refresh", "title": "%cmd.refresh%", "category": "4PM", "enablement": "4pm.signedIn", "icon": "$(refresh)" },
+      { "command": "4pm.markAllRead", "title": "%cmd.markAllRead%", "category": "4PM", "enablement": "4pm.signedIn", "icon": "$(check-all)" },
+      { "command": "4pm.openItem", "title": "%cmd.openItem%", "category": "4PM" },
+      { "command": "4pm.openInWeb", "title": "%cmd.openInWeb%", "category": "4PM", "icon": "$(link-external)" },
+      { "command": "4pm.markRead", "title": "%cmd.markRead%", "category": "4PM", "icon": "$(check)" }
+    ],
+    "menus": {
+      "view/title": [
+        { "command": "4pm.refresh", "when": "view == 4pm.myWork && 4pm.signedIn", "group": "navigation" },
+        { "command": "4pm.markAllRead", "when": "view == 4pm.notifications && 4pm.signedIn", "group": "navigation" }
+      ],
+      "view/item/context": [
+        { "command": "4pm.openInWeb", "when": "view == 4pm.myWork && viewItem == workItem", "group": "inline" },
+        { "command": "4pm.markRead", "when": "view == 4pm.notifications && viewItem == notification.unread", "group": "inline" }
+      ],
+      "commandPalette": [
+        { "command": "4pm.openItem", "when": "false" },
+        { "command": "4pm.openInWeb", "when": "false" },
+        { "command": "4pm.markRead", "when": "false" }
+      ]
+    }
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch",
+    "package": "node scripts/build.mjs --production && node scripts/package.mjs",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@4pm/constants": "workspace:*",
+    "@4pm/dto": "workspace:*",
+    "@4pm/sdk": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/vscode": "1.90.0",
+    "@vscode/vsce": "^3.2.0",
+    "esbuild": "^0.25.12",
+    "vitest": "^5.0.3"
+  }
+}

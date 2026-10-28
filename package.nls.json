@@ -1,0 +1,20 @@
+{
+  "description": "See what waits on you in 4PM, get notifications and drive your project's worker from the editor.",
+  "config.serverUrl": "The 4PM client gateway origin, e.g. `https://gw.4pm.app` (self-hosted: your own `gw.<domain>`).",
+  "config.webUrl": "The 4PM web app origin, used for sign-in and *Open in 4PM* links, e.g. `https://app.4pm.app`.",
+  "view.myWork": "My work",
+  "view.notifications": "Notifications",
+  "welcome.signIn": "Sign in to see your 4PM work and notifications.\n[Sign in to 4PM](command:4pm.signIn)",
+  "cmd.signIn": "Sign In",
+  "cmd.signOut": "Sign Out",
+  "cmd.linkProject": "Link Workspace to Project",
+  "cmd.unlinkProject": "Unlink Workspace",
+  "cmd.runCommand": "Run Command on Worker",
+  "cmd.runPrompt": "Run AI Prompt on Worker",
+  "cmd.stopRun": "Stop Run",
+  "cmd.refresh": "Refresh",
+  "cmd.markAllRead": "Mark All Notifications Read",
+  "cmd.openItem": "Open Item",
+  "cmd.openInWeb": "Open in 4PM",
+  "cmd.markRead": "Mark Read"
+}
