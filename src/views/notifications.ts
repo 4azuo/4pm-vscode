@@ -157,7 +157,8 @@ export class NotificationsProvider implements vscode.TreeDataProvider<Notificati
     }
     const n = { type, payload };
     this.arrived.fire(n);
-    void vscode.window.showInformationMessage(`4PM: ${notificationText(n)}`);
+    // A mention gets its own actionable message (the extension opens the discussion).
+    if (type !== "discussion.mentioned") void vscode.window.showInformationMessage(`4PM: ${notificationText(n)}`);
     void this.refresh();
   }
 

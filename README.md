@@ -14,7 +14,15 @@ your project's workers.
 - **Link the workspace to a 4PM project.** Pick the project once per workspace (nothing is written to the repo). The
   status bar shows the project, whether its worker is online, and the autonomous state.
 - **My work.** What waits on you across projects — in progress, to check, to approve, to answer, discussions. A row
-  of the linked project opens its book file at that row; anything else opens in 4PM.
+  of the linked project opens as a card; anything else opens in 4PM.
+- **Row card.** A book row's details, approval progress and discussions, with Approve / Unapprove, Answer (for a
+  question), *View diff* (what changed since approval, against your last commit), and *Open source* for the raw
+  markdown.
+- **Book editor.** *Open With… → 4PM Book* on `USER_TODO.md`, `AI_TODO.md`… (or the *Books* view): a table you can
+  filter, sort and edit; saves go to the project's worker with the same rules as the web. AI_TODO also has a
+  **task board** (waiting · approved · in progress · done).
+- **Discussions.** Read, reply to and open discussions of the linked project; a mention takes you to it.
+- **Autonomous.** Click the status bar to start or pause autonomous for the project.
 - **Notifications.** Live, with an unread badge; mark one or all read.
 - **Run on the worker.** Send a console command or an AI prompt to the linked project's worker, watch the output in
   the *4PM Run* output channel, stop it.

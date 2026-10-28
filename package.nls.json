@@ -16,5 +16,13 @@
   "cmd.markAllRead": "Mark All Notifications Read",
   "cmd.openItem": "Open Item",
   "cmd.openInWeb": "Open in 4PM",
-  "cmd.markRead": "Mark Read"
+  "cmd.markRead": "Mark Read",
+  "view.discussions": "Discussions",
+  "cmd.projectMenu": "Project Menu (Autonomous, Link)",
+  "cmd.openDiscussion": "Open Discussion",
+  "cmd.newDiscussion": "New Discussion",
+  "view.books": "Books",
+  "editor.book": "4PM Book",
+  "cmd.openBook": "Open as 4PM Book",
+  "cmd.taskBoard": "Task Board"
 }

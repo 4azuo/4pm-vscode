@@ -1,0 +1,31 @@
+/* Panel styles of the 4PM VS Code extension (ADR-0673) — editor theme colours only. */
+body { font-family: var(--vscode-font-family); font-size: var(--vscode-font-size); color: var(--vscode-foreground); background: var(--vscode-editor-background); padding: 0 20px 24px; max-width: 920px; }
+.head { padding: 16px 0 8px; border-bottom: 1px solid var(--vscode-panel-border); margin-bottom: 12px; }
+.head__title { font-size: 1.4em; margin: 0 0 4px; }
+.head__subtitle, .muted, .item__detail, .message__at { color: var(--vscode-descriptionForeground); }
+.head__subtitle { margin: 0; }
+.notice { padding: 6px 10px; border-left: 3px solid; margin: 8px 0; }
+.notice--info { border-color: var(--vscode-notificationsInfoIcon-foreground); }
+.notice--warning { border-color: var(--vscode-notificationsWarningIcon-foreground); }
+.notice--error { border-color: var(--vscode-notificationsErrorIcon-foreground); color: var(--vscode-errorForeground); }
+.section { margin: 16px 0; }
+.section__title { font-size: 1em; text-transform: uppercase; letter-spacing: .04em; color: var(--vscode-descriptionForeground); margin: 0 0 8px; }
+.fields { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; margin: 0; }
+.fields dt { color: var(--vscode-descriptionForeground); }
+.fields dd { margin: 0; white-space: pre-wrap; word-break: break-word; }
+.text, .message__body { white-space: pre-wrap; word-break: break-word; margin: 0; }
+.items { list-style: none; padding: 0; margin: 0; }
+.item { display: flex; gap: 8px; align-items: baseline; padding: 3px 0; }
+.link { background: none; border: none; padding: 0; color: var(--vscode-textLink-foreground); cursor: pointer; font: inherit; text-align: left; }
+.link:hover { text-decoration: underline; }
+.message { border: 1px solid var(--vscode-panel-border); border-radius: 4px; padding: 8px 10px; margin: 8px 0; }
+.message--muted { opacity: .6; }
+.message__head { display: flex; gap: 8px; margin-bottom: 4px; }
+.form { display: flex; flex-direction: column; gap: 6px; margin: 16px 0; }
+.form__input { font: inherit; color: var(--vscode-input-foreground); background: var(--vscode-input-background); border: 1px solid var(--vscode-input-border, transparent); padding: 6px; resize: vertical; }
+.form .btn { align-self: flex-start; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--vscode-panel-border); }
+.btn { font: inherit; padding: 4px 12px; border: 1px solid var(--vscode-button-border, transparent); border-radius: 2px; cursor: pointer; color: var(--vscode-button-secondaryForeground); background: var(--vscode-button-secondaryBackground); }
+.btn--primary { color: var(--vscode-button-foreground); background: var(--vscode-button-background); }
+.btn--danger { color: var(--vscode-errorForeground); }
+.btn:disabled, .link:disabled { opacity: .5; cursor: default; }

@@ -1,0 +1,25 @@
+/* Book editor styles of the 4PM VS Code extension (ADR-0674) — editor theme colours only. */
+body.book { max-width: none; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 8px 0 12px; }
+.filter { font: inherit; min-width: 220px; padding: 3px 6px; color: var(--vscode-input-foreground); background: var(--vscode-input-background); border: 1px solid var(--vscode-input-border, transparent); }
+.tab { font: inherit; padding: 4px 10px; border: none; border-bottom: 2px solid transparent; background: none; color: var(--vscode-foreground); cursor: pointer; }
+.tab--on { border-bottom-color: var(--vscode-focusBorder); }
+.badge { padding: 2px 8px; border-radius: 10px; background: var(--vscode-badge-background); color: var(--vscode-badge-foreground); }
+.table-wrap { overflow-x: auto; }
+.grid { border-collapse: collapse; width: 100%; }
+.grid th, .grid td { border-bottom: 1px solid var(--vscode-panel-border); padding: 4px 6px; vertical-align: top; text-align: left; }
+.grid th { position: sticky; top: 0; background: var(--vscode-editor-background); }
+.grid td:nth-child(2), .grid th:nth-child(2) { position: sticky; left: 0; background: var(--vscode-editor-background); white-space: nowrap; }
+.sort { background: none; border: none; padding: 0; font: inherit; font-weight: 600; color: var(--vscode-foreground); cursor: pointer; }
+.col-select { width: 24px; }
+.cell { width: 100%; min-width: 120px; font: inherit; color: var(--vscode-input-foreground); background: transparent; border: 1px solid transparent; resize: vertical; }
+.cell:focus { border-color: var(--vscode-focusBorder); background: var(--vscode-input-background); outline: none; }
+.row--edited td { background: var(--vscode-diffEditor-insertedLineBackground, rgba(80, 160, 80, .12)); }
+.row--conflict td { background: var(--vscode-diffEditor-removedLineBackground, rgba(200, 60, 60, .15)); }
+.approval { white-space: nowrap; }
+.board { display: grid; grid-template-columns: repeat(4, minmax(200px, 1fr)); gap: 12px; align-items: start; }
+.board__col { background: var(--vscode-sideBar-background); border-radius: 4px; padding: 8px; }
+.card { display: flex; flex-direction: column; gap: 2px; width: 100%; text-align: left; font: inherit; color: var(--vscode-foreground); background: var(--vscode-editor-background); border: 1px solid var(--vscode-panel-border); border-radius: 4px; padding: 6px 8px; margin-bottom: 6px; cursor: pointer; }
+.card:hover { border-color: var(--vscode-focusBorder); }
+.card__id { font-size: .9em; }
+.card__meta { color: var(--vscode-descriptionForeground); font-size: .9em; }

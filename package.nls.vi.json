@@ -16,5 +16,13 @@
   "cmd.markAllRead": "Đánh dấu tất cả đã đọc",
   "cmd.openItem": "Mở mục",
   "cmd.openInWeb": "Mở trên 4PM",
-  "cmd.markRead": "Đánh dấu đã đọc"
+  "cmd.markRead": "Đánh dấu đã đọc",
+  "view.discussions": "Thảo luận",
+  "cmd.projectMenu": "Menu dự án (Tự động, Liên kết)",
+  "cmd.openDiscussion": "Mở thảo luận",
+  "cmd.newDiscussion": "Thảo luận mới",
+  "view.books": "Book",
+  "editor.book": "4PM Book",
+  "cmd.openBook": "Mở dạng 4PM Book",
+  "cmd.taskBoard": "Bảng task"
 }

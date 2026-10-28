@@ -1,9 +1,11 @@
 /**
- * The status bar item (F2): the linked project, its worker online / offline and the autonomous state. Refreshed on
- * events (sign-in, link change, a notification, the window regaining focus) — never on a timer.
- * @adr 0670 @arch 0072
+ * The status bar item (F2): the linked project, the project autonomous switch, its worker online / offline and the
+ * worker's own autonomous state; a click opens the project menu (D3). Refreshed on events (sign-in, link change, a
+ * notification, the window regaining focus) — never on a timer.
+ * @adr 0670 @adr 0673 @api project-0124 @arch 0072
  */
 import * as vscode from "vscode";
+import type { Api } from "./api";
 import type { WorkspaceLink } from "./workspace-link";
 
 /** Render the status bar item. */
@@ -12,8 +14,11 @@ export class StatusBar implements vscode.Disposable {
   private signedIn = false;
   private seq = 0;
 
-  /** Over the workspace link. */
-  constructor(private readonly link: WorkspaceLink) {
+  /** Over the workspace link and the API. */
+  constructor(
+    private readonly link: WorkspaceLink,
+    private readonly api: Api,
+  ) {
     this.item.name = "4PM";
     this.item.show();
   }
@@ -39,8 +44,15 @@ export class StatusBar implements vscode.Disposable {
     let text = `$(project) ${project.name}`;
     let tooltip = vscode.l10n.t("4PM project: {0}", project.name);
     try {
-      const worker = await this.link.worker();
+      const [worker, policy] = await Promise.all([
+        this.link.worker(),
+        this.api.sdk.projects.autonomousWorkers(project.id).catch(() => null),
+      ]);
       if (seq !== this.seq) return;
+      if (policy) {
+        text += policy.enabled ? " · $(play-circle)" : " · $(stop-circle)";
+        tooltip += `\n${vscode.l10n.t("Project autonomous: {0}", policy.enabled ? vscode.l10n.t("on") : vscode.l10n.t("off"))}`;
+      }
       if (!worker) {
         text += ` · $(circle-slash) ${vscode.l10n.t("no worker")}`;
         tooltip += `\n${vscode.l10n.t("No worker serves this project.")}`;
@@ -55,7 +67,7 @@ export class StatusBar implements vscode.Disposable {
       text += " · $(warning)";
       tooltip += `\n${vscode.l10n.t("Could not load the worker state.")}`;
     }
-    this.render(text, tooltip, "4pm.linkProject");
+    this.render(text, tooltip, "4pm.projectMenu");
   }
 
   /** Apply text, tooltip and click command. */

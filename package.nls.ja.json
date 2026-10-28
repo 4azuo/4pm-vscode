@@ -16,5 +16,13 @@
   "cmd.markAllRead": "すべての通知を既読にする",
   "cmd.openItem": "項目を開く",
   "cmd.openInWeb": "4PM で開く",
-  "cmd.markRead": "既読にする"
+  "cmd.markRead": "既読にする",
+  "view.discussions": "ディスカッション",
+  "cmd.projectMenu": "プロジェクトメニュー（自律、リンク）",
+  "cmd.openDiscussion": "ディスカッションを開く",
+  "cmd.newDiscussion": "新しいディスカッション",
+  "view.books": "ブック",
+  "editor.book": "4PM ブック",
+  "cmd.openBook": "4PM ブックとして開く",
+  "cmd.taskBoard": "タスクボード"
 }

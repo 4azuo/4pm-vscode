@@ -16,5 +16,13 @@
   "cmd.markAllRead": "全部标为已读",
   "cmd.openItem": "打开项目",
   "cmd.openInWeb": "在 4PM 中打开",
-  "cmd.markRead": "标记为已读"
+  "cmd.markRead": "标记为已读",
+  "view.discussions": "讨论",
+  "cmd.projectMenu": "项目菜单（自主、关联）",
+  "cmd.openDiscussion": "打开讨论",
+  "cmd.newDiscussion": "新建讨论",
+  "view.books": "Book",
+  "editor.book": "4PM Book",
+  "cmd.openBook": "以 4PM Book 打开",
+  "cmd.taskBoard": "任务看板"
 }

@@ -34,6 +34,9 @@ function groupLabel(group: MyWorkGroup): string {
 export class MyWorkProvider implements vscode.TreeDataProvider<Node> {
   private readonly changed = new vscode.EventEmitter<Node | undefined>();
   readonly onDidChangeTreeData = this.changed.event;
+  private readonly loaded = new vscode.EventEmitter<void>();
+  /** Fires after each reload. */
+  readonly onDidLoad = this.loaded.event;
   private items: MyWorkItem[] = [];
   private counts: Partial<Record<MyWorkGroup, number>> = {};
   private error: string | null = null;
@@ -55,6 +58,11 @@ export class MyWorkProvider implements vscode.TreeDataProvider<Node> {
     void this.refresh();
   }
 
+  /** How many items of `group` wait on the user in one project. */
+  countFor(projectId: string, group: MyWorkGroup): number {
+    return this.items.filter((i) => i.projectId === projectId && i.group === group).length;
+  }
+
   /** Reload from the server. */
   async refresh(): Promise<void> {
     if (!this.signedIn) return;
@@ -67,6 +75,7 @@ export class MyWorkProvider implements vscode.TreeDataProvider<Node> {
       this.error = errorText(err);
     }
     this.changed.fire(undefined);
+    this.loaded.fire();
   }
 
   /** Root = groups with items (or the error); a group's children = its items. */
