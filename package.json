@@ -292,7 +292,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@4pm/constants": "workspace:*",
+    "@4pm/shared-constants": "workspace:*",
     "@4pm/dto": "workspace:*",
     "@4pm/sdk": "workspace:*"
   },

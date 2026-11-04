@@ -4,7 +4,7 @@
  * Shared by the row panel and the book editor.
  * @adr 0674 @api machine-0063 @api machine-0080
  */
-import { isAiTaskTag } from "@4pm/constants";
+import { isAiTaskTag } from "@4pm/shared-constants";
 import { approvalBookOfRow } from "@4pm/dto";
 import type { Api } from "../api";
 
